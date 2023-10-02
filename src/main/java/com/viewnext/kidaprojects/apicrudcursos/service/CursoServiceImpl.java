@@ -119,6 +119,17 @@ public class CursoServiceImpl implements CursoService{
 		
 		return listaCursos;
 	}
+
+	/**
+	 * Recupera y devuelve una lista de todos los cursos disponibles en el sistema.
+	 *
+	 * @return Una lista de objetos {@code Curso} que representan los cursos disponibles.
+	 */
+	@Override
+	public List<Curso> mostrarCursos() {
+		
+		return cursoRepository.findAll();
+	}
 	
 	
 

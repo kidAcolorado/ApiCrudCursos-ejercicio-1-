@@ -128,5 +128,12 @@ public class CursoRestController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(CURSO_NOT_FOUND);
 		}
 	}
+	
+	@GetMapping(value = "curso", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> mostrarCursos(){
+		List<Curso> listaCursos = cursoService.mostrarCursos();
+		return ResponseEntity.ok(listaCursos);
+				
+	}
 
 }

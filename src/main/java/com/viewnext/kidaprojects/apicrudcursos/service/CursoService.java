@@ -16,6 +16,8 @@ import com.viewnext.kidaprojects.apicrudcursos.model.Curso;
  */
 public interface CursoService {
 	
+	public List<Curso> mostrarCursos();
+	
 	/**
      * Da de alta un nuevo curso.
      *
