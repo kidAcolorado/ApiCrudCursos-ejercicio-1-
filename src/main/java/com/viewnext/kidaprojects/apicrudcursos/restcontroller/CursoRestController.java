@@ -81,7 +81,7 @@ public class CursoRestController {
      * @param duracion La nueva duración del curso.
      * @return Una respuesta HTTP sin contenido (204) después de actualizar la duración del curso.
      */
-	@PutMapping(value = "curso/{codigo}/{duracion}")
+	@PutMapping(value = "curso")
 	public ResponseEntity<?> actualizarDuracionCurso(@RequestParam("codigo") String codigo,
 			@RequestParam("duracion") int duracion) {
 		try {
@@ -117,7 +117,7 @@ public class CursoRestController {
      * @param precioMaximo El precio máximo de los cursos a buscar.
      * @return Una respuesta HTTP con la lista de cursos en formato JSON que se encuentran en el rango de precios especificado.
      */
-	@GetMapping(value = "curso/precios/{precioMinimo}/{precioMaximo}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "curso/precios", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> buscarCursosPorRangoPrecios(@RequestParam("precioMinimo") int precioMinimo,
 			@RequestParam("precioMaximo") int precioMaximo) {
 
