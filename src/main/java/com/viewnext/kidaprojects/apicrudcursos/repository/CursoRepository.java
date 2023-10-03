@@ -21,14 +21,16 @@ import com.viewnext.kidaprojects.apicrudcursos.model.Curso;
 public interface CursoRepository extends JpaRepository<Curso, String> {
 
 	/**
-     * Recupera una lista de cursos cuyos precios están dentro de un rango especificado.
-     *
-     * @param precioMinimo Precio mínimo del rango.
-     * @param precioMaximo Precio máximo del rango.
-     * @return Una lista de cursos que cumplen con el rango de precios especificado.
-     */
+	 * Busca cursos cuyo precio se encuentra en el rango especificado, incluyendo los extremos.
+	 *
+	 * @param precioMinimo El precio mínimo del rango.
+	 * @param precioMaximo El precio máximo del rango.
+	 * @return Una lista de objetos {@code Curso} cuyos precios están dentro del rango especificado.
+	 */
 	@Query("SELECT c FROM Curso c WHERE c.precio >= :precioMinimo AND c.precio <= :precioMaximo")
-	public List<Curso> findCursosPriceRange(@Param("precioMinimo") int precioMinimo, @Param("precioMaximo")  int precioMaximo);
+	List<Curso> findByPrecioBetween(int precioMinimo, int precioMaximo);
+
+
 	
 
 }

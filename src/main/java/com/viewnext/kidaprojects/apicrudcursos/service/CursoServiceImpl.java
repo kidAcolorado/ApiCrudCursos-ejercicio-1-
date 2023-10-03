@@ -110,7 +110,7 @@ public class CursoServiceImpl implements CursoService{
      */
 	@Override
 	public List<Curso> buscarCursosPorRangoPrecios(int precioMinimo, int precioMaximo) throws EntityNotFoundException{
-		List<Curso> listaCursos = cursoRepository.findCursosPriceRange(precioMinimo, precioMaximo);
+		List<Curso> listaCursos = cursoRepository.findByPrecioBetween(precioMinimo, precioMaximo);
 		
 		if(listaCursos.isEmpty()) {
 			throw new EntityNotFoundException();
