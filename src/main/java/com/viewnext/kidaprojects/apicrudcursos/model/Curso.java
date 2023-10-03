@@ -22,9 +22,10 @@ import jakarta.persistence.Id;
 @Entity
 public class Curso {
 
+		
 	@Id
-	private String codigoCurso;
 	private String nombre;
+	private String codigoCurso;
 	private int duracion; 
 	private int precio;
 	
@@ -74,8 +75,10 @@ public class Curso {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(codigoCurso);
+		return Objects.hash(nombre);
 	}
+
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -86,7 +89,7 @@ public class Curso {
 		if (getClass() != obj.getClass())
 			return false;
 		Curso other = (Curso) obj;
-		return Objects.equals(codigoCurso, other.codigoCurso);
+		return Objects.equals(nombre, other.nombre);
 	}
 
 	@Override
