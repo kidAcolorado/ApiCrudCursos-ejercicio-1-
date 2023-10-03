@@ -42,19 +42,17 @@ public class CursoRestController {
 	private static final String CURSO_NOT_FOUND = "Curso/s con los argumentos introducidos no encontrado";
 
 	/**
-     * Crea un nuevo curso en la base de datos.
-     *
-     * @param curso El curso que se va a crear.
-     * @return Una respuesta HTTP con la lista de cursos en formato JSON después de crear el curso.
-     */
+	 * Crea un nuevo curso en la base de datos.
+	 *
+	 * @param curso El curso que se va a crear.
+	 * @return Una respuesta HTTP con la lista de cursos en formato JSON después de crear el curso.
+	 */
 	@PostMapping(value = "curso", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> darAltaCurso(@RequestBody Curso curso) {
-		try {
+		
 			List<Curso> listaCursos = cursoService.darAltaCurso(curso);
 			return ResponseEntity.ok(listaCursos);
-		} catch (EntityNotFoundException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(CURSO_NOT_FOUND);
-		}
+		
 
 	}
 
