@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,7 +48,7 @@ public class CursoRestController {
      * @return Una respuesta HTTP con la lista de cursos en formato JSON después de crear el curso.
      */
 	@PostMapping(value = "curso", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> darAltaCurso(Curso curso) {
+	public ResponseEntity<?> darAltaCurso(@RequestBody Curso curso) {
 		try {
 			List<Curso> listaCursos = cursoService.darAltaCurso(curso);
 			return ResponseEntity.ok(listaCursos);

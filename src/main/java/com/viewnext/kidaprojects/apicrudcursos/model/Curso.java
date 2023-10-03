@@ -9,16 +9,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
- * La clase {@code Curso} representa un curso con la siguiente información: -
- * Código del curso. - Nombre del curso. - Número de horas de duración del
- * curso. - Precio del curso.
- * 
+ * La clase {@code Curso} representa un curso en la base de datos. Contiene información
+ * como el código, nombre, duración y precio del curso.
+ *
  * <p>
  * El autor de esta clase es Víctor Colorado "Kid A".
  * </p>
  *
  * @version 1.0
- * @since 02 de Octubre de 2023
+ * @since 3 de Octubre de 2023
  */
 @Entity
 @Table(name = "cursos")
