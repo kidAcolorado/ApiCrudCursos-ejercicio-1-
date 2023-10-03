@@ -29,4 +29,6 @@ public interface CursoRepository extends JpaRepository<Curso, String> {
      */
 	@Query("SELECT c FROM Curso c WHERE c.precio >= :precioMinimo AND c.precio <= :precioMaximo")
 	public List<Curso> findCursosPriceRange(@Param("precioMinimo") int precioMinimo, @Param("precioMaximo")  int precioMaximo);
+	
+
 }

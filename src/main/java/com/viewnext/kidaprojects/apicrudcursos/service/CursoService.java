@@ -16,6 +16,12 @@ import com.viewnext.kidaprojects.apicrudcursos.model.Curso;
  */
 public interface CursoService {
 	
+	
+	/**
+	 * Recupera una lista de todos los cursos disponibles.
+	 *
+	 * @return Una lista de objetos {@link Curso} que representan todos los cursos disponibles.
+	 */
 	public List<Curso> mostrarCursos();
 	
 	/**

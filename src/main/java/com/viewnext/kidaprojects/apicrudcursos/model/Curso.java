@@ -2,15 +2,17 @@ package com.viewnext.kidaprojects.apicrudcursos.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
- * La clase {@code Curso} representa un curso con la siguiente información:
- * - Código del curso.
- * - Nombre del curso.
- * - Número de horas de duración del curso.
- * - Precio del curso.
+ * La clase {@code Curso} representa un curso con la siguiente información: -
+ * Código del curso. - Nombre del curso. - Número de horas de duración del
+ * curso. - Precio del curso.
  * 
  * <p>
  * El autor de esta clase es Víctor Colorado "Kid A".
@@ -20,18 +22,22 @@ import jakarta.persistence.Id;
  * @since 02 de Octubre de 2023
  */
 @Entity
+@Table(name = "cursos")
 public class Curso {
 
-		
-	@Id
-	private String nombre;
-	private String codigoCurso;
-	private int duracion; 
-	private int precio;
 	
-	public Curso(String codigoCurso, String nombre, int duracion, int precio) {
+	
+
+	@Id
+	private String codigo;
+
+	private String nombre;
+	private int duracion;
+	private int precio;
+
+	public Curso(String codigo, String nombre, int duracion, int precio) {
 		super();
-		this.codigoCurso = codigoCurso;
+		this.codigo = codigo;
 		this.nombre = nombre;
 		this.duracion = duracion;
 		this.precio = precio;
@@ -41,12 +47,14 @@ public class Curso {
 		super();
 	}
 
-	public String getCodigoCurso() {
-		return codigoCurso;
+	
+
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setCodigoCurso(String codigoCurso) {
-		this.codigoCurso = codigoCurso;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -75,10 +83,8 @@ public class Curso {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(nombre);
+		return Objects.hash(codigo);
 	}
-
-	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -89,15 +95,16 @@ public class Curso {
 		if (getClass() != obj.getClass())
 			return false;
 		Curso other = (Curso) obj;
-		return Objects.equals(nombre, other.nombre);
+		return Objects.equals(codigo, other.codigo);
 	}
 
 	@Override
 	public String toString() {
-		return "Curso [codigoCurso=" + codigoCurso + ", nombre=" + nombre + ", duracion=" + duracion + ", precio="
-				+ precio + "]";
+		return "Curso [codigo=" + codigo + ", nombre=" + nombre + ", duracion=" + duracion + ", precio=" + precio + "]";
 	}
+
 	
+
 	
-	
+
 }
